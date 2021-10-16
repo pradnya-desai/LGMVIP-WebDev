@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <nav>
+      <div class="logo"><img src="images/logo.jpg" alt="" srcset="" /></div>
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#prod-section">Products</a></li>
+        <li><a href="#img-gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a
+            onclick="document.getElementById('id01').style.display='block'"
+            href="#"
+            >Admin Login</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!--end of navbar-->
+
+    <div class="container">
+      <img
+        src="images/wepik-2021821-103453.jpg"
+        style="width: 100%; filter: blur(2px)"
+      />
+
+      <!--login popup-->
+      <div class="text-block">
+        <div id="id01" class="modal">
+          <form class="modal-content animate">
+            <div class="imgcontainer">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="close"
+                title="Close Modal"
+                >&times;</span
+              >
+              <img
+                src="https://t3.ftcdn.net/jpg/02/05/81/66/360_F_205816659_DMcHo94TD1OxhTmO1LmiRECam5YnWoOa.jpg"
+                alt="Avatar"
+                class="avatar img-popup"
+              />
+            </div>
+
+            <div class="container-login">
+              <label for="uname"><b>Username</b></label>
+              <input
+                type="text"
+                class="login-input"
+                placeholder="Enter Username"
+                name="uname"
+                required
+              />
+
+              <label for="psw"><b>Password</b></label>
+              <input
+                type="password"
+                class="login-input"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+
+              <button class="button-popup" type="submit">Login</button>
+              <label>
+                <input
+                  type="checkbox"
+                  checked="checked"
+                  class="login-input"
+                  name="remember"
+                />
+                Remember me
+              </label>
+            </div>
+
+            <div class="container-login" style="background-color: #f1f1f1">
+              <button
+                type="button-popup"
+                onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+        <!--end of login-->
+
+        <h4>Welcome</h4>
+        <p>To Devilishy Desserts!</p>
+      </div>
+    </div>
+
+    <!--about Us-->
+    <section id="about-section">
+      <div class="about-section">
+        <div class="inner-container">
+          <h1>About Us</h1>
+          <p class="text">
+            We here At Devilishy Desserts offer you with a wide range of bakery
+            and confectinary products along with mouth watering desserts. Being
+            a home baker my goal is to provide lavishing and tasty cakes to all
+            my customers with utmost affection and love. Different favoured &
+            customized cakes are also delivered as per the customer's need and
+            want. All the products are being baked by following all the Covid-19
+            protocols. Tremendous hygiene and care is taken while preparing the
+            dishes. Different ingredients and vessels are used for different
+            orders.All products are made considering that they can be eaten by
+            all age groups.Chocolate lovers must try all the yummy products.We
+            are here at your service & just a call away. Currently our orders
+            are limited to pune region only.
+          </p>
+
+          <div class="skills">
+            <span><i class="fas fa-bread-slice"></i> Bakery </span>
+            <span> <i class="fas fa-cookie-bite"></i> Confectionary </span>
+            <span> <i class="fas fa-birthday-cake"></i> Pattisserie </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--end of about us-->
+
+    <!--products-->
+    <section class="products" id="prod-section">
+      <section class="languages">
+        <div class="flex">
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Rosgulla Cake</h4>
+            <img src="images/cakes/rosgullacake.jpg" alt="" height="60%" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Cookies</h4>
+            <img src="images/cookies.jpg" alt="" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Donuts</h4>
+            <img src="images/donuts.jpg" alt="" height="60%" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Bread</h4>
+            <img src="images/bread.jpg" alt="" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Jar Cake</h4>
+            <img src="images/cakejars/cheesejar.jpg" alt="" height="60%" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+          <div class="card" style="width: 30%; height: 310px">
+            <h4>Cadbury Cake</h4>
+            <img src="images/cakes/cadburycake.jpg" alt="" height="60%" />
+            <div class="read">
+              <p>Rs 120</p>
+              <button>Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!--end of products section-->
+
+    <!--img gallery-->
+    <section class="gallery" id="img-gallery">
+      <div class="header">
+        <h1>Image Gallery</h1>
+        <p>Here are the images of some of our Products</p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="images/cakes/blueberrycake.jpg" style="width: 100%" />
+          <img src="images/cakejars/cheesejar.jpg" style="width: 100%" />
+          <img src="images/cookies.jpg" style="width: 100%" />
+          <img src="images/cakes/rosecake.jpg" style="width: 100%" />
+          <img src="images/cakejars/mangojar.jpg" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="images/cakes/rosgullacake.jpg" style="width: 100%" />
+          <img src="images/cakes/butterflycake.jpg" style="width: 100%" />
+          <img src="images/donuts.jpg" style="width: 100%" />
+          <img src="images/bread.jpg" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="images/desserts/pannacotta.jpg" style="width: 100%" />
+          <img
+            src="images/desserts/IMG_20210901_192936_551.webp"
+            style="width: 100%"
+          />
+          <img src="images/cakes/IMG_20210922_135413.jpg" style="width: 100%" />
+          <img
+            src="images/desserts/IMG_20210901_214854_878.webp"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column">
+          <img src="images/desserts/brownie.jpg" style="width: 100%" />
+          <img src="images/cakes/rosgullacream.jpg" style="width: 100%" />
+          <img src="images/cakes/cadburycake.jpg" style="width: 100%" />
+          <img src="images/desserts/brownie2.jpg" style="width: 100%" />
+        </div>
+      </div>
+    </section>
+    <!--end of image gallery-->
+
+    <!--contact us section-->
+    <section id="contact">
+      <div class="bg-img">
+        <div id="visiting">
+          <img
+            src="images/visiting card vru-01.jpg"
+            id="vcard"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div id="form-main">
+          <div id="form-div">
+            <form class="form" id="form1">
+              <p class="name">
+                <input
+                  name="name"
+                  type="text"
+                  class="
+                    validate[required,custom[onlyLetter],length[0,100]]
+                    feedback-input
+                  "
+                  placeholder="Name"
+                  id="name"
+                />
+              </p>
+
+              <p class="email">
+                <input
+                  name="email"
+                  type="text"
+                  class="validate[required,custom[email]] feedback-input"
+                  id="email"
+                  placeholder="Email"
+                />
+              </p>
+              <p class="text">
+                <input
+                  name="phno"
+                  class="validate[required,length[8,10]] feedback-input"
+                  id="phno"
+                  placeholder="phone no"
+                />
+              </p>
+
+              <p class="text">
+                <textarea
+                  name="text"
+                  class="validate[required,length[6,300]] feedback-input"
+                  id="comment"
+                  placeholder="Comment"
+                ></textarea>
+              </p>
+
+              <div class="submit">
+                <input type="submit" value="SEND" id="button-blue" />
+                <div class="ease"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--end of contact form-->
+
+    <!--footer-->
+    <footer>
+      <div class="footer-bottom">
+        <div class="footer-bottom-copyright-text">
+          &copy; 2020 Devilishy Desserts | All Rights Reserved
+        </div>
+        <div class="footer-bottom-social-icons">
+          <ul id="footer-social-links">
+            <li><a href="" target="_blank">Home</a></li>
+            |
+            <li><a href="#" target="_blank">About</a></li>
+            |
+            <li><a href="" target="_blank">Products</a></li>
+            |
+            <li><a href="#" target="_blank">Gallery</a></li>
+            |
+            <li><a href="#" target="_blank">Contact</a></li>
+          </ul>
+          <div class="footer-bottom-site-credit">
+            Powered By:
+            <span id="site-credit"
+              ><a href="" target="_blank">Pradnya Desai</a></span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end of footer-->
+
+    <div class="icon-bar">
+      <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="twitter"><i class="fab fa-twitter-square"></i></a>
+      <a href="#" class="google"><i class="fab fa-google-plus"></i></a>
+      <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!--go to top button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fas fa-birthday-cake"></i>
+    </button>
+    <!--end of code-->
+  </body>
+</html>

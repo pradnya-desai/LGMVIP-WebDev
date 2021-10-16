@@ -1,0 +1,970 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*navbar css*/
+nav {
+  display: flex;
+  height: 90px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 37px;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+    /* height: 100%; */
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: relative;
+    /* top: 80px; */
+    left: -150%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+    z-index: 9999 !important;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+    z-index: 9999 !important;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+/*home section css*/
+.container {
+  position: relative;
+  font-family: Arial;
+  height: 50%;
+  width: 100%;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 920px) {
+  .text-block img {
+    width: 50%;
+    height: 50%;
+    position: relative;
+  }
+}
+
+/*about section css*/
+.about-section {
+  background: url("images/logo.jpg") no-repeat left;
+  background-size: 35%;
+
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 0 0;
+}
+
+.inner-container {
+  width: 65%;
+  float: right;
+  background: white;
+  padding: 150px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 13px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  font-size: 18px;
+  color: black;
+}
+
+.skills span {
+  padding: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .inner-container {
+    padding: 80px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+
+  .inner-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    padding: 0;
+  }
+
+  .inner-container {
+    padding: 60px;
+  }
+}
+
+/*product section css*/
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px;
+  color: #333;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.btn:hover {
+  transform: scale(1.12);
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+.languages .card img {
+  width: 50%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.text-center {
+  text-align: center;
+}
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 1.5rem 0;
+}
+.my-3 {
+  margin: 2rem 0;
+}
+.my-4 {
+  margin: 3rem 0;
+}
+.my-5 {
+  margin: 4rem 0;
+}
+
+.m-1 {
+  margin: 1rem 0;
+}
+.m-2 {
+  margin: 1.5rem;
+}
+.m-3 {
+  margin: 2rem;
+}
+.m-4 {
+  margin: 3rem;
+}
+.m-5 {
+  margin: 4rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 1.5rem 0;
+}
+.py-3 {
+  padding: 2rem 0;
+}
+.py-4 {
+  padding: 3rem 0;
+}
+.py-5 {
+  padding: 4rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 1.5rem;
+}
+.p-3 {
+  padding: 2rem;
+}
+.p-4 {
+  padding: 3rem;
+}
+.p-5 {
+  padding: 4rem;
+}
+
+.bg-primary,
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.bg-secodary,
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.bg-dark,
+.btn-dark {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+.bg-light,
+.btn-light {
+  background-color: var(--light-color);
+  color: #333;
+}
+
+.lead {
+  font-size: 20px;
+}
+.lg {
+  font-size: 3rem;
+}
+.sm {
+  font-size: 1rem;
+}
+.md {
+  font-size: 2rem;
+}
+.xl {
+  font-size: 4rem;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  flex-direction: row;
+  transition: 0.3s ease-in-out;
+}
+.languages .flex {
+  flex-wrap: wrap;
+}
+.languages .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.languages .card:hover {
+  transform: translateY(-15px);
+}
+
+@media (max-width: 260px) {
+  .languages {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.dissp {
+  display: none;
+}
+button {
+  background-color: #047aed;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  transition: 0.6s;
+}
+button:hover {
+  background: none;
+  border: 1px solid black;
+  color: black;
+}
+.products {
+  background-color: #fecacc;
+}
+.products button {
+  background-color: #fecacc;
+  color: black;
+  font-weight: bold;
+}
+
+.products p {
+  color: grey;
+  font-weight: bold;
+}
+
+/*image gallery css*/
+.gallery {
+  height: 100%;
+  background-color: white;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.contact img {
+  width: 100%;
+  filter: blur(3px);
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*footer css*/
+footer {
+  background-color: #000;
+  min-width: 400px;
+  width: 100%;
+  text-align: center;
+  line-height: 35px;
+  height: 35px;
+  color: #ccc;
+}
+.footer-bottom-site-credit {
+  padding-right: 10px;
+}
+span#site-credit a {
+  color: #3399fe;
+  font-size: 75%;
+}
+span#site-credit a:hover {
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #3399fe;
+}
+@media only screen and (max-width: 480px) {
+  .footer-bottom-copyright-text {
+    font-size: 80%;
+  }
+  .footer-bottom-social-icons {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-bottom-copyright-text {
+    width: 100%;
+  }
+  .footer-bottom-social-icons {
+    background-color: #000;
+  }
+  .footer-bottom-site-credit {
+    padding-right: 0px;
+  }
+  #footer-social-links li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 10px;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .footer-bottom {
+    text-align: left;
+  }
+  .footer-bottom-copyright-text {
+    max-width: 480px;
+    float: left;
+    padding: 10px 10px 0px 10px;
+    line-height: 60px;
+    height: 60px;
+  }
+  .footer-bottom-social-icons {
+    background-color: #000;
+    text-align: right;
+    padding: 0px 10px;
+  }
+  #footer-social-links li {
+    list-style: none;
+    display: inline-block;
+    padding: 15px 10px 0px 10px;
+  }
+}
+
+/*social media link css */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.twitter {
+  background: #55acee;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/*login form css*/
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.button-popup {
+  background-color: #fecacc;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.button-popup:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #fecacc;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+  border-radius: 20px;
+}
+
+.img-popup.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.container-login {
+  padding: 16px;
+  border-radius: 20px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 20px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/*contact form css*/
+#contact {
+  background-image: url("images/edited.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+}
+
+.bg-img {
+  background-image: url("images/edited.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: auto;
+}
+
+#feedback-page {
+  text-align: center;
+}
+
+#form-main {
+  width: 100%;
+  /* float:right; */
+  padding-top: 0px;
+}
+
+#form-div {
+  background-color: rgba(10, 1, 1, 0.671);
+  flex-direction: row-reverse;
+  padding: 30px;
+}
+
+@media (max-width: 676px) {
+  #form-div {
+    flex-direction: column;
+  }
+}
+.feedback-input {
+  color: #3c3c3c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 0;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  /* border: 3px solid rgba(0,0,0,0); */
+  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+}
+
+.feedback-input:focus {
+  background: #fff;
+  box-shadow: 0;
+  border: 3px solid #fecacc;
+  color: black;
+  outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused {
+  color: black;
+  border: black solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name {
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#name:focus {
+  background-size: 30px 30px;
+  background-position: 8px 5px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#email {
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+}
+
+#email:focus {
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#comment {
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+  margin-top: -35px;
+}
+#phno {
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  background-color: white;
+}
+
+#button-blue {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+  background-color: #fecacc;
+  color: black;
+  font-size: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.6s;
+}
+
+#button-blue:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+}
+
+.submit:hover {
+  color: black;
+}
+
+.ease {
+  width: 0px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.submit:hover .ease {
+  width: 100%;
+  background-color: white;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/*visiting card css*/
+#visiting {
+  width: 800px;
+}
+
+#vcard {
+  width: 50%;
+  height: auto;
+  position: relative;
+}
